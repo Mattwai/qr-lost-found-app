@@ -1,0 +1,47 @@
+Refactor(structure): clean up codebase from 4 folders to 2, remove nested web app
+
+BREAKING CHANGES:
+- Consolidated project structure from 4 folders to 2 (mobile & web)
+- Removed nested web app from inside mobile directory
+- Deleted duplicate/empty folders (qr-lost-found-web, qr-web-app, qr-web-local)
+
+FEATURES:
+- Created clean Next.js 16 web app with TypeScript & Tailwind CSS
+- Built 3 pages: Home, Found (QR scan), Register (item registration)
+- Added Suspense boundaries for Next.js App Router compatibility
+- Implemented localStorage-based MVP (ready for backend API)
+- Fixed all ESLint errors and build issues
+
+DOCUMENTATION:
+- Added comprehensive README.md at root level
+- Created mobile/README.md with Expo setup guide
+- Created web/README.md with Next.js development guide
+- Added web/DEPLOYMENT.md for Vercel deployment instructions
+- Created CLEANUP_SUMMARY.md documenting all changes
+
+STRUCTURE BEFORE:
+qr_lost_found/
+├── qr-lost-found-mobile/    # Mobile app
+│   └── web/                 # ❌ Nested web app
+├── qr-lost-found-web/       # ❌ Empty folder
+├── qr-web-app/              # ❌ Boilerplate only
+└── qr-web-local/            # ❌ Express server
+
+STRUCTURE AFTER:
+qr_lost_found/
+├── mobile/                  # ✅ React Native/Expo app
+└── web/                     # ✅ Next.js app (Vercel-ready)
+
+BUILD STATUS:
+✅ Web build successful (npm run build)
+✅ No ESLint errors (npm run lint)
+✅ TypeScript compilation successful
+✅ All pages render correctly
+✅ Vercel deployment ready
+
+DEPLOYMENT NOTES:
+- Web app ready for Vercel: Set root directory to "web"
+- Mobile app ready for Expo build
+- Both apps use same data structure for integration
+
+Don't forget to commit!
